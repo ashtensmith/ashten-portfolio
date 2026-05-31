@@ -355,6 +355,22 @@
                 </g>
               </svg>
             </button>
+            <span class="specs-coach" id="specsCoach" aria-hidden="true">
+              <svg class="specs-coach__arrow" viewBox="0 0 94 54" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <filter id="specsCoachRough" x="-15%" y="-15%" width="130%" height="130%">
+                    <feTurbulence type="fractalNoise" baseFrequency="0.03 0.04" numOctaves="2" seed="3" result="n" />
+                    <feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" />
+                  </filter>
+                </defs>
+                <g filter="url(#specsCoachRough)" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M88,16 C60,6 32,12 12,36" />
+                  <path d="M12,36 L28,32" />
+                  <path d="M12,36 L19,22" />
+                </g>
+              </svg>
+              <span class="specs-coach__note">Put <b>these</b> on!</span>
+            </span>
           </div>
           <p class="section__desc">
             I approach ambiguous problems like an investigation: follow the evidence,

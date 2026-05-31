@@ -396,10 +396,20 @@ ul { list-style: none; }
 .about__list li { padding: 9px 0; border-bottom: 1px solid var(--border); color: var(--text-soft); font-size: 0.96rem; }
 
 /* ---------- Process ---------- */
-.process .section__head { max-width: 800px; }
+.process .section__head { max-width: 980px; }
 .process .section__desc { max-width: 620px; }
-.process__titlerow { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.process__titlerow { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
 .process__titlerow .section__title { margin-top: 0; }
+
+/* Coach mark nudging you to put the glasses on */
+.specs-coach {
+  display: inline-flex; align-items: center; gap: 6px; flex: 0 0 auto;
+  pointer-events: none; transition: opacity .4s var(--ease);
+}
+.specs-coach.is-gone { opacity: 0; visibility: hidden; }
+.specs-coach__arrow { width: 78px; height: auto; display: block; color: var(--accent); }
+.specs-coach__note { font-family: var(--font-hand); font-size: 1.4rem; line-height: 1; color: var(--text); white-space: nowrap; }
+.specs-coach__note b { color: var(--accent); }
 
 /* Sketched glasses toggle beside the heading */
 .specs-toggle {

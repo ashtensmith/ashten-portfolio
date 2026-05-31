@@ -157,6 +157,7 @@
   const specsToggle = document.getElementById('specsToggle');
   const specsView = document.getElementById('specsView');
   const specsClose = document.getElementById('specsClose');
+  const specsCoach = document.getElementById('specsCoach');
 
   if (specsToggle && specsView) {
     let lastFocus = null;
@@ -171,6 +172,7 @@
       specsToggle.setAttribute('aria-pressed', 'true');
       document.body.classList.add('specs-open');
       document.addEventListener('keydown', onSpecsKey);
+      if (specsCoach) specsCoach.classList.add('is-gone'); // they found it — stop nudging
       if (specsClose) specsClose.focus();
     };
 
