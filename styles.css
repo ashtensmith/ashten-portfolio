@@ -27,6 +27,7 @@
 
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-serif:'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-hand: 'Caveat', 'Segoe Script', cursive;
 
   --maxw: 1180px;
   --radius: 20px;
@@ -169,6 +170,7 @@ ul { list-style: none; }
 
 /* ---------- Stats panel ("By the Numbers") ---------- */
 .stats-panel {
+  position: relative;
   background: var(--surface); border: 1px solid var(--border);
   border-radius: 24px; padding: 26px;
   box-shadow: 0 30px 60px -40px rgba(90,60,35,0.4);
@@ -186,6 +188,82 @@ ul { list-style: none; }
 .stat__label {
   display: block; margin-top: 14px; color: var(--text-muted);
   font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; line-height: 1.7;
+}
+
+/* ---------- Scrapbook: magazine cut-out freesia ---------- */
+.scrapbook {
+  position: absolute; top: -58px; right: -30px; width: 152px;
+  z-index: 6; cursor: help; -webkit-tap-highlight-color: transparent;
+}
+.scrapbook:focus { outline: none; }
+.scrapbook__card {
+  position: relative; transform: rotate(6deg);
+  filter: drop-shadow(0 14px 18px rgba(60,40,25,0.28));
+  transition: transform .45s var(--ease), filter .45s var(--ease);
+}
+.scrapbook__paper {
+  background: #fdfaf3; padding: 16px 14px 12px;
+  box-shadow: inset 0 0 22px rgba(120,90,55,0.10);
+  /* torn, hand-cut magazine edge */
+  clip-path: polygon(
+    3% 3%, 16% 0, 30% 4%, 45% 1%, 60% 4%, 74% 0, 88% 4%, 99% 9%,
+    96% 22%, 100% 36%, 97% 50%, 100% 64%, 96% 78%, 99% 91%, 89% 99%,
+    75% 95%, 61% 99%, 46% 96%, 32% 99%, 18% 96%, 6% 99%, 1% 90%,
+    4% 76%, 0 62%, 3% 48%, 0 34%, 3% 20%, 1% 9%);
+}
+.scrapbook__art {
+  position: relative; color: #43301f; line-height: 0;
+  /* faint halftone newsprint dots behind the ink */
+  background-image: radial-gradient(rgba(67,48,31,0.16) 0.5px, transparent 0.6px);
+  background-size: 4px 4px;
+}
+.scrapbook__art svg { display: block; width: 100%; height: auto; }
+.scrapbook__label {
+  display: block; text-align: center; margin-top: 6px;
+  font-family: var(--font-serif); font-style: italic; font-size: 0.78rem;
+  color: #6b5443; letter-spacing: 0.01em;
+}
+.scrapbook__tape {
+  position: absolute; top: -11px; left: 50%; width: 58px; height: 22px;
+  transform: translateX(-50%) rotate(-5deg);
+  background:
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.28) 0 3px, transparent 3px 6px),
+    rgba(44,74,62,0.20);
+  border: 1px solid rgba(44,74,62,0.12);
+  box-shadow: 0 1px 3px rgba(60,40,25,0.12);
+}
+.scrapbook__note {
+  position: absolute; top: 100%; left: 50%; width: 170px; margin-top: 8px;
+  transform: translate(-50%, 8px) rotate(-2deg); opacity: 0; pointer-events: none;
+  background: #fffdf7; border: 1px dashed var(--border-hover); border-radius: 12px;
+  padding: 13px 16px; text-align: center;
+  box-shadow: 0 14px 26px -14px rgba(60,40,25,0.45);
+  transition: opacity .35s var(--ease), transform .35s var(--ease);
+}
+.scrapbook__note strong {
+  display: block; font-family: var(--font-serif); font-style: italic; font-weight: 600;
+  font-size: 0.95rem; color: var(--text);
+}
+.scrapbook__note span {
+  display: block; margin-top: 1px; font-family: var(--font-hand); font-size: 1.2rem;
+  line-height: 1.15; color: var(--cta);
+}
+/* hover / keyboard-focus reveal */
+.scrapbook:hover .scrapbook__card,
+.scrapbook:focus-within .scrapbook__card {
+  transform: rotate(0deg) translateY(-5px);
+  filter: drop-shadow(0 22px 26px rgba(60,40,25,0.34));
+}
+.scrapbook:hover .scrapbook__note,
+.scrapbook:focus-within .scrapbook__note {
+  opacity: 1; transform: translate(-50%, 0) rotate(-2deg);
+}
+@media (max-width: 600px) {
+  .scrapbook { top: -46px; right: -8px; width: 120px; }
+  .scrapbook__note { width: 152px; }
+}
+@media (max-width: 380px) {
+  .scrapbook { display: none; }
 }
 
 /* ---------- Section scaffolding ---------- */
