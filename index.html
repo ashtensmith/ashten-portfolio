@@ -469,28 +469,29 @@
           <feDisplacementMap in="SourceGraphic" in2="n" scale="8" />
         </filter>
         <radialGradient id="specsGlass" cx="38%" cy="30%" r="80%">
-          <stop offset="0%" stop-color="#ffffff" stop-opacity="0.13" />
+          <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12" />
           <stop offset="55%" stop-color="#7f8a63" stop-opacity="0.05" />
           <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
         </radialGradient>
       </defs>
       <g filter="url(#specsRough)">
-        <ellipse cx="430" cy="452" rx="356" ry="348" fill="url(#specsGlass)" />
-        <ellipse cx="1170" cy="452" rx="356" ry="348" fill="url(#specsGlass)" />
+        <ellipse cx="662" cy="452" rx="452" ry="432" fill="url(#specsGlass)" />
+        <ellipse cx="938" cy="452" rx="452" ry="432" fill="url(#specsGlass)" />
         <g fill="none" stroke="#f1e7da" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
-          <ellipse cx="430" cy="452" rx="356" ry="348" />
-          <ellipse cx="1170" cy="452" rx="356" ry="348" />
-          <path d="M786,252 C800,206 800,206 814,252" />
-          <path d="M76,332 C46,318 22,328 0,332" />
-          <path d="M1524,332 C1554,318 1578,328 1600,332" />
+          <ellipse cx="662" cy="452" rx="452" ry="432" />
+          <ellipse cx="938" cy="452" rx="452" ry="432" />
+          <path d="M212,360 C150,344 70,352 0,356" />
+          <path d="M1388,360 C1450,344 1530,352 1600,356" />
         </g>
       </g>
     </svg>
-    <div class="specs-view__msg">
-      <span class="specs-view__kicker">Now in focus</span>
-      <p class="specs-view__text"><em>Evidence-based design</em> is essential to my success.</p>
+    <div class="specs-view__reveal">
+      <div class="specs-view__msg">
+        <span class="specs-view__kicker">Now in focus</span>
+        <p class="specs-view__text"><em>Evidence-based design</em> is essential to my success.</p>
+      </div>
+      <button class="specs-view__close" id="specsClose" type="button">Take the glasses off</button>
     </div>
-    <button class="specs-view__close" id="specsClose" type="button">Take the glasses off</button>
   </div>
 
   <script src="script.js"></script>

@@ -181,8 +181,8 @@
       specsToggle.setAttribute('aria-pressed', 'false');
       document.body.classList.remove('specs-open');
       document.removeEventListener('keydown', onSpecsKey);
-      const finish = () => { specsView.hidden = true; specsView.removeEventListener('transitionend', finish); };
-      if (prefersReduced) { specsView.hidden = true; } else { specsView.addEventListener('transitionend', finish); }
+      if (prefersReduced) { specsView.hidden = true; }
+      else { window.setTimeout(() => { specsView.hidden = true; }, 900); }
       if (lastFocus && lastFocus.focus) lastFocus.focus();
     };
 
