@@ -138,7 +138,7 @@ ul { list-style: none; }
 .nav__menu-btn[aria-expanded="true"] span:last-child { transform: translateY(-0px) rotate(-45deg); }
 
 /* ---------- Hero ---------- */
-.hero { padding: 168px 0 96px; }
+.hero { padding: 168px 0 150px; } /* extra bottom room for the freesia taped under the panel */
 .hero__grid {
   display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 56px; align-items: start;
 }
@@ -191,8 +191,10 @@ ul { list-style: none; }
 }
 
 /* ---------- Scrapbook: magazine cut-out freesia ---------- */
+/* Taped to the bottom edge of the "By the Numbers" panel, hanging below it. */
 .scrapbook {
-  position: relative; width: 150px; margin: 46px 0 0 2px;
+  position: absolute; top: calc(100% - 26px); left: 50%;
+  transform: translateX(-50%); width: 132px;
   z-index: 6; cursor: help; -webkit-tap-highlight-color: transparent;
 }
 .scrapbook:focus { outline: none; }
@@ -258,12 +260,8 @@ ul { list-style: none; }
 .scrapbook:focus-within .scrapbook__note {
   opacity: 1; transform: translate(-50%, 0) rotate(-2deg);
 }
-@media (max-width: 960px) {
-  /* single-column hero: tuck the cut-out beside the buttons */
-  .scrapbook { margin: 40px 0 8px 2px; }
-}
 @media (max-width: 600px) {
-  .scrapbook { width: 132px; margin-top: 34px; }
+  .scrapbook { width: 116px; top: calc(100% - 22px); }
   .scrapbook__note { width: 156px; }
 }
 
@@ -457,7 +455,7 @@ ul { list-style: none; }
     background: rgba(245,239,232,0.97); backdrop-filter: blur(14px); padding: 20px 32px; gap: 18px;
     border-bottom: 1px solid var(--border);
   }
-  .hero { padding: 140px 0 70px; }
+  .hero { padding: 140px 0 120px; }
 }
 @media (max-width: 460px) {
   .steps { grid-template-columns: 1fr; }
