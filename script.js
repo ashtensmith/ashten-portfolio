@@ -106,6 +106,53 @@
     counters.forEach((c) => countObserver.observe(c));
   }
 
+  /* ---- Case-study lock gate ---- */
+  const lockBtn = document.getElementById('lockBtn');
+  const lockGate = document.getElementById('lockGate');
+  const casesEl = document.querySelector('.work .cases');
+
+  if (lockBtn && lockGate && casesEl) {
+    const links = casesEl.querySelectorAll('.case__link');
+    const setLinksEnabled = (on) => {
+      links.forEach((l) => {
+        if (on) { l.removeAttribute('tabindex'); l.removeAttribute('aria-disabled'); }
+        else { l.setAttribute('tabindex', '-1'); l.setAttribute('aria-disabled', 'true'); }
+      });
+    };
+
+    const lock = () => {
+      casesEl.classList.add('is-locked');
+      setLinksEnabled(false);
+      lockGate.hidden = false;
+      lockBtn.setAttribute('aria-pressed', 'false');
+    };
+
+    const unlock = (animate) => {
+      casesEl.classList.remove('is-locked');
+      setLinksEnabled(true);
+      lockBtn.classList.add('is-open');
+      lockBtn.setAttribute('aria-pressed', 'true');
+      if (animate && !prefersReduced) {
+        window.setTimeout(() => lockGate.classList.add('is-gone'), 620);
+        window.setTimeout(() => { lockGate.hidden = true; }, 1180);
+      } else {
+        lockGate.classList.add('is-gone');
+        lockGate.hidden = true;
+      }
+      try { sessionStorage.setItem('casesUnlocked', '1'); } catch (e) { /* ignore */ }
+    };
+
+    let alreadyUnlocked = false;
+    try { alreadyUnlocked = sessionStorage.getItem('casesUnlocked') === '1'; } catch (e) { /* ignore */ }
+
+    if (alreadyUnlocked) {
+      setLinksEnabled(true); // cards stay active; gate stays hidden
+    } else {
+      lock();
+      lockBtn.addEventListener('click', () => unlock(true));
+    }
+  }
+
   /* ---- Year in footer (future-proof) ---- */
   // Static "© 2026" is in the markup; no JS needed.
 })();

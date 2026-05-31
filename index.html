@@ -163,6 +163,43 @@
           </p>
         </header>
 
+        <!-- Lock gate: click to unlock & activate the case-study cards -->
+        <div class="lockgate" id="lockGate" hidden>
+          <div class="coachmark" aria-hidden="true">
+            <p class="coachmark__note">Psst — <b>click the lock</b> to open the case studies!</p>
+            <svg class="coachmark__arrow" viewBox="0 0 130 92" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="arrowRough" x="-15%" y="-15%" width="130%" height="130%">
+                  <feTurbulence type="fractalNoise" baseFrequency="0.03 0.04" numOctaves="2" seed="4" result="n" />
+                  <feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" />
+                </filter>
+              </defs>
+              <g filter="url(#arrowRough)" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6,18 C 40,4 84,10 114,40" />
+                <path d="M114,40 L96,33" />
+                <path d="M114,40 L101,53" />
+              </g>
+            </svg>
+          </div>
+          <button class="lock" id="lockBtn" type="button" aria-pressed="false" aria-label="Unlock the case studies">
+            <svg class="lock__art" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="lockRough" x="-12%" y="-12%" width="124%" height="124%">
+                  <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="9" result="n" />
+                  <feDisplacementMap in="SourceGraphic" in2="n" scale="2.0" />
+                </filter>
+              </defs>
+              <g filter="url(#lockRough)" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+                <path class="lock__shackle" d="M40,66 V48 a20,20 0 0 1 40,0 V66" />
+                <rect x="24" y="64" width="72" height="64" rx="11" />
+                <circle cx="60" cy="92" r="7" />
+                <path d="M60,99 L56,116 L64,116 Z" fill="currentColor" stroke="none" />
+              </g>
+            </svg>
+            <span class="lock__hint">Locked</span>
+          </button>
+        </div>
+
         <div class="cases">
 
           <!-- Case 1 -->
