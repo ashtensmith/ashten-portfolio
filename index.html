@@ -515,6 +515,52 @@
     </div>
   </div>
 
+  <!-- ============ EASTER-EGG TOAST ============ -->
+  <div class="egg-toast" id="eggToast" role="status" aria-live="polite" hidden>
+    <span class="egg-toast__icon" aria-hidden="true">&#129370;</span>
+    <span class="egg-toast__text">
+      <strong class="egg-toast__title">Easter egg found!</strong>
+      <span class="egg-toast__count" id="eggCount">1 of 3</span>
+    </span>
+  </div>
+
+  <!-- ============ PRIZE: DANCING PLATYPUS ============ -->
+  <div class="prize" id="prizeModal" role="dialog" aria-modal="true" aria-label="You found all three easter eggs" hidden>
+    <div class="prize__card">
+      <div class="confetti-layer" aria-hidden="true">
+        <span class="confetti"></span><span class="confetti"></span><span class="confetti"></span>
+        <span class="confetti"></span><span class="confetti"></span><span class="confetti"></span>
+        <span class="confetti"></span><span class="confetti"></span><span class="confetti"></span>
+        <span class="confetti"></span>
+      </div>
+      <p class="prize__kicker">You found all three! &#127881;</p>
+      <h3 class="prize__title">Your prize: a dancing platypus</h3>
+      <div class="prize__stage">
+        <span class="prize__note prize__note--1" aria-hidden="true">&#9834;</span>
+        <span class="prize__note prize__note--2" aria-hidden="true">&#9835;</span>
+        <svg class="platypus" viewBox="0 0 260 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <ellipse class="platypus__tail" cx="48" cy="130" rx="44" ry="25" fill="#6f5436" />
+          <ellipse cx="98" cy="176" rx="17" ry="9" fill="#bd7d3c" />
+          <ellipse cx="162" cy="178" rx="17" ry="9" fill="#bd7d3c" />
+          <ellipse cx="134" cy="118" rx="88" ry="62" fill="#8a6a4a" />
+          <ellipse cx="140" cy="138" rx="66" ry="44" fill="#a17f5b" />
+          <path class="platypus__arm" d="M150,116 C168,108 182,102 194,92" stroke="#7a5c3d" stroke-width="11" fill="none" stroke-linecap="round" />
+          <g class="platypus__bill">
+            <path d="M198,104 C226,95 252,104 252,121 C252,138 226,147 198,138 C206,126 206,116 198,104 Z" fill="#cf9055" />
+            <path d="M207,121 C222,119 238,121 246,121" stroke="#9c6a35" stroke-width="2.4" fill="none" stroke-linecap="round" />
+            <circle cx="216" cy="112" r="2.2" fill="#7a4f25" />
+            <circle cx="228" cy="111" r="2.2" fill="#7a4f25" />
+          </g>
+          <circle cx="178" cy="124" r="11" fill="#d79a78" opacity="0.45" />
+          <circle cx="186" cy="100" r="8.5" fill="#2c2722" />
+          <circle cx="188.5" cy="97" r="2.8" fill="#fff" />
+        </svg>
+      </div>
+      <p class="prize__sub">Thanks for poking around. Curiosity is a design skill.</p>
+      <button class="btn btn--primary prize__close" id="prizeClose" type="button">Yay!</button>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>

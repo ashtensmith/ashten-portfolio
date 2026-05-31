@@ -106,6 +106,73 @@
     counters.forEach((c) => countObserver.observe(c));
   }
 
+  /* ---- Easter-egg hunt ---- */
+  let closeSpecsView = null; // assigned by the glasses section below
+  const EGG_TOTAL = 3;
+  const eggToast = document.getElementById('eggToast');
+  const eggCountEl = document.getElementById('eggCount');
+  const prizeModal = document.getElementById('prizeModal');
+  const prizeClose = document.getElementById('prizeClose');
+  let eggsFound;
+  try { eggsFound = new Set(JSON.parse(sessionStorage.getItem('eggsFound') || '[]')); }
+  catch (e) { eggsFound = new Set(); }
+  let eggToastTimer = null;
+
+  const showEggToast = (count) => {
+    if (!eggToast) return;
+    if (eggCountEl) eggCountEl.textContent = count + ' of ' + EGG_TOTAL;
+    eggToast.hidden = false;
+    window.requestAnimationFrame(() => eggToast.classList.add('is-on'));
+    window.clearTimeout(eggToastTimer);
+    eggToastTimer = window.setTimeout(() => {
+      eggToast.classList.remove('is-on');
+      window.setTimeout(() => { eggToast.hidden = true; }, 400);
+    }, 3600);
+  };
+
+  const showPrize = () => {
+    if (!prizeModal) return;
+    prizeModal.hidden = false;
+    window.requestAnimationFrame(() => prizeModal.classList.add('is-on'));
+    document.body.classList.add('specs-open');
+    if (prizeClose) prizeClose.focus();
+  };
+  const hidePrize = () => {
+    if (!prizeModal) return;
+    prizeModal.classList.remove('is-on');
+    document.body.classList.remove('specs-open');
+    if (prefersReduced) { prizeModal.hidden = true; }
+    else { window.setTimeout(() => { prizeModal.hidden = true; }, 420); }
+  };
+
+  function markEgg(id) {
+    if (!eggToast || eggsFound.has(id)) return;
+    eggsFound.add(id);
+    try { sessionStorage.setItem('eggsFound', JSON.stringify([...eggsFound])); } catch (e) { /* ignore */ }
+    const count = eggsFound.size;
+    showEggToast(count);
+    if (count >= EGG_TOTAL) {
+      // let the "3 of 3" toast land, close any open overlay, then celebrate
+      window.setTimeout(() => {
+        if (typeof closeSpecsView === 'function') closeSpecsView();
+        window.setTimeout(showPrize, 650);
+      }, 1100);
+    }
+  }
+
+  if (prizeClose) prizeClose.addEventListener('click', hidePrize);
+  if (prizeModal) prizeModal.addEventListener('click', (e) => { if (e.target === prizeModal) hidePrize(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && prizeModal && !prizeModal.hidden) hidePrize(); });
+
+  const flowerEgg = document.querySelector('.scrapbook');
+  if (flowerEgg) {
+    const findFlower = () => markEgg('flower');
+    flowerEgg.addEventListener('click', findFlower);
+    flowerEgg.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); findFlower(); }
+    });
+  }
+
   /* ---- Case-study lock gate ---- */
   const lockBtn = document.getElementById('lockBtn');
   const lockGate = document.getElementById('lockGate');
@@ -149,7 +216,7 @@
       setLinksEnabled(true); // cards stay active; gate stays hidden
     } else {
       lock();
-      lockBtn.addEventListener('click', () => unlock(true));
+      lockBtn.addEventListener('click', () => { unlock(true); markEgg('lock'); });
     }
   }
 
@@ -187,8 +254,9 @@
     };
 
     specsToggle.addEventListener('click', () => {
-      if (specsView.hidden) openSpecs(); else closeSpecs();
+      if (specsView.hidden) { openSpecs(); markEgg('glasses'); } else closeSpecs();
     });
+    closeSpecsView = closeSpecs; // let the egg hunt dismiss the glasses before the prize
     if (specsClose) specsClose.addEventListener('click', closeSpecs);
     // click on the dimmed backdrop (outside the stage) closes
     specsView.addEventListener('click', (e) => { if (e.target === specsView) closeSpecs(); });
