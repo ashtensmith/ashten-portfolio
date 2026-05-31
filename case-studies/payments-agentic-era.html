@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payments for the Agentic Era — Case Study · Ashten Smith</title>
+  <meta name="description" content="Making HubSpot's payment links and checkout extensible, adaptable, and observable — for the moment when an AI agent, not a human, initiates the transaction." />
+
+  <meta property="og:title" content="Payments for the Agentic Era — Case Study" />
+  <meta property="og:description" content="Designing extensible, observable payments for AI-initiated transactions." />
+  <meta property="og:type" content="article" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../case-study.css" />
+</head>
+<body>
+  <a href="#problem" class="skip-link">Skip to content</a>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="../index.html#top" class="nav__brand">
+        <span class="nav__mark">AS</span>
+        <span class="nav__name">Ashten&nbsp;Smith</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#process">Process</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+      <a href="../index.html#contact" class="btn btn--small nav__cta">Get in touch</a>
+      <button class="nav__menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="cs" id="top">
+    <div class="cs__wrap">
+
+      <a href="../index.html#work" class="cs-back">&#8592; All work</a>
+
+      <!-- ============ HERO ============ -->
+      <header class="cs-hero reveal">
+        <div class="cs-toppills">
+          <span class="cs-toppill">Staff Product Designer</span>
+          <span class="cs-toppill">Payments · Platform Design</span>
+          <span class="cs-toppill">Agentic UX · Revenue Hub</span>
+          <span class="cs-toppill">2023 – 2025</span>
+          <span class="cs-toppill">HubSpot</span>
+        </div>
+        <h1 class="cs-hero__title">Payments for the Agentic Era</h1>
+        <p class="cs-hero__lede cs-hero__lede--italic">
+          Making HubSpot's payment links and checkout extensible, adaptable, and
+          observable — for the moment when an AI agent, not a human, initiates the
+          transaction.
+        </p>
+        <figure class="cs-figure cs-figure--tall">
+          <span class="cs-figure__icon">&#128247;</span>
+          <span class="cs-figure__label">Insert: cover image — agentic checkout flow or key platform screen</span>
+        </figure>
+      </header>
+
+      <!-- ============ THE PROBLEM ============ -->
+      <section class="cs-section reveal" id="problem">
+        <p class="cs-eyebrow">The Problem</p>
+        <h2 class="cs-h2">Payment links were built for humans. Agents don't work that way.</h2>
+        <p class="cs-p cs-guide">
+          Describe the specific friction — what HubSpot's existing payment links and
+          checkout assumed about who was completing the transaction, and where those
+          assumptions broke down when AI started initiating flows. What did
+          "extensible," "adaptable," and "observable" actually mean in practice, and
+          why were none of those things true?
+        </p>
+        <p class="cs-p cs-guide">
+          What were the failure modes — for merchants, for customers, for ops teams
+          trying to understand what happened when an agent-initiated transaction
+          failed or stalled? What was the business cost of this gap?
+        </p>
+        <figure class="cs-quote">
+          <blockquote>Insert a quote from an internal stakeholder, engineer, or early user that captures what was broken about the existing checkout in agentic contexts.</blockquote>
+          <figcaption>Name, Role · Team or context</figcaption>
+        </figure>
+        <p class="cs-p cs-guide">
+          What made this technically constrained — the existing payments
+          infrastructure, third-party dependencies, or the evolving definition of
+          what "agentic" even meant at the time? This is where you establish the
+          scope of the design challenge.
+        </p>
+      </section>
+
+      <!-- ============ MY ROLE ============ -->
+      <section class="cs-section reveal">
+        <p class="cs-eyebrow">My Role</p>
+        <h2 class="cs-h2">Product design lead across payments, platform, and revenue engineering</h2>
+        <p class="cs-p cs-guide">
+          Describe your scope — what you owned as the design lead for this
+          initiative, who you partnered with across payments engineering, platform
+          teams, and Revenue Hub PM, and how decisions were made across a technically
+          constrained domain.
+        </p>
+        <div class="cs-rolegrid">
+          <div class="cs-rolecol">
+            <p class="cs-rolecol__k">I owned</p>
+            <p class="cs-rolecol__v">End-to-end checkout UX, extensibility configuration surface, observability UI for ops teams, and the agentic transaction interaction model.</p>
+          </div>
+          <div class="cs-rolecol">
+            <p class="cs-rolecol__k">I partnered on</p>
+            <p class="cs-rolecol__v">API contract design with platform engineering, merchant configuration model with PM, legal review of agent-initiated transaction disclosure requirements.</p>
+          </div>
+          <div class="cs-rolecol">
+            <p class="cs-rolecol__k">I influenced</p>
+            <p class="cs-rolecol__v">Payments infrastructure roadmap, Revenue Hub strategy for recurring billing and agent-initiated commerce, internal tooling for transaction observability.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ EVOLUTION ============ -->
+      <section class="cs-section reveal">
+        <p class="cs-eyebrow">Evolution</p>
+        <h2 class="cs-h2">How the work changed over time</h2>
+        <p class="cs-p">Four phases — from auditing what existed to designing what's next.</p>
+
+        <div class="cs-timeline">
+
+          <!-- Phase 01 -->
+          <div class="cs-phase">
+            <div class="cs-phase__meta">
+              <span class="cs-phase__date--accent">Q2 2023</span>
+            </div>
+            <div class="cs-phase__body">
+              <p class="cs-phase__kicker">Phase 01</p>
+              <h3 class="cs-h3">Audit &amp; Constraint Mapping</h3>
+              <p class="cs-p cs-guide">
+                Describe what the audit of the existing checkout revealed — what
+                assumptions were baked into the current payment link UX, where the
+                system broke under non-human initiation, and what gaps existed in the
+                API and configuration model. What were the hardest constraints to
+                design around?
+              </p>
+              <div class="cs-figrow">
+                <figure class="cs-figure">
+                  <span class="cs-figure__icon">&#128269;</span>
+                  <span class="cs-figure__label">Insert: audit findings or constraint map</span>
+                </figure>
+                <figure class="cs-figure">
+                  <span class="cs-figure__icon">&#9888;&#65039;</span>
+                  <span class="cs-figure__label">Insert: failure mode documentation or edge case inventory</span>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phase 02 -->
+          <div class="cs-phase">
+            <div class="cs-phase__meta">
+              <span class="cs-phase__date--accent">Q4 2023</span>
+            </div>
+            <div class="cs-phase__body">
+              <p class="cs-phase__kicker">Phase 02</p>
+              <h3 class="cs-h3">The Extensibility Model</h3>
+              <p class="cs-p cs-guide">
+                Describe how you designed the configuration surface that lets
+                merchants and developers customize checkout behavior — what
+                parameters were exposed, how the UI mapped to the API contract, and
+                what the first round of developer feedback revealed. What had to be
+                rebuilt vs. extended?
+              </p>
+              <div class="cs-figrow">
+                <figure class="cs-figure">
+                  <span class="cs-figure__icon">&#9881;&#65039;</span>
+                  <span class="cs-figure__label">Insert: configuration UI — merchant or developer surface</span>
+                </figure>
+                <figure class="cs-figure">
+                  <span class="cs-figure__icon">&#128209;</span>
+                  <span class="cs-figure__label">Insert: API schema diagram or extensibility model</span>
+                </figure>
+              </div>
+              <div class="cs-protocard">
+                <p class="cs-protocard__eyebrow">Prototype · Phase 2</p>
+                <h4 class="cs-protocard__title">Checkout Configuration Surface</h4>
+                <p class="cs-protocard__desc">The merchant-facing UI for configuring payment link behavior — fields, logic, and the developer handoff surface.</p>
+                <a href="#" class="cs-proto__btn">&#9654; View prototype</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phase 03 -->
+          <div class="cs-phase">
+            <div class="cs-phase__meta">
+              <span class="cs-phase__date--accent">Q2 2024</span>
+            </div>
+            <div class="cs-phase__body">
+              <p class="cs-phase__kicker">Phase 03</p>
+              <h3 class="cs-h3">Observability Layer</h3>
+              <p class="cs-p cs-guide">
+                Describe what it took to give ops teams and engineers visibility into
+                agent-initiated transactions — what data needed to be surfaced, what
+                the audit trail UI looked like, and how you balanced detail for power
+                users with clarity for ops generalists. What did you learn from the
+                first ops team walkthroughs?
+              </p>
+              <div class="cs-figrow">
+                <figure class="cs-figure">
+                  <span class="cs-figure__icon">&#128202;</span>
+                  <span class="cs-figure__label">Insert: transaction log or observability dashboard</span>
+                </figure>
+                <figure class="cs-figure">
+                  <span class="cs-figure__icon">&#128269;</span>
+                  <span class="cs-figure__label">Insert: drill-down or error state views</span>
+                </figure>
+              </div>
+              <div class="cs-protocard">
+                <p class="cs-protocard__eyebrow">Prototype · Phase 3</p>
+                <h4 class="cs-protocard__title">Transaction Observability Dashboard</h4>
+                <p class="cs-protocard__desc">How ops teams and engineers monitor, trace, and investigate agent-initiated payment flows in real time.</p>
+                <a href="#" class="cs-proto__btn">&#9654; View prototype</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phase 04 -->
+          <div class="cs-phase">
+            <div class="cs-phase__meta">
+              <span class="cs-phase__date--accent">Q4 2024</span>
+            </div>
+            <div class="cs-phase__body">
+              <p class="cs-phase__kicker">Phase 04</p>
+              <h3 class="cs-h3">Agentic Checkout — End State</h3>
+              <p class="cs-p cs-guide">
+                Describe what the fully agentic checkout experience looks like — how
+                the system adapts when an agent initiates vs. a human, what context
+                the checkout surface knows about its own initiation, and how
+                confirmation and receipt states differ. What did it take to get
+                engineering, legal, and payments to align on the final model?
+              </p>
+              <div class="cs-figrow">
+                <figure class="cs-figure">
+                  <span class="cs-figure__icon">&#129302;</span>
+                  <span class="cs-figure__label">Insert: agent-initiated checkout flow — key screens</span>
+                </figure>
+                <figure class="cs-figure">
+                  <span class="cs-figure__icon">&#9989;</span>
+                  <span class="cs-figure__label">Insert: confirmation and receipt states — agentic vs. human</span>
+                </figure>
+              </div>
+              <div class="cs-protocard">
+                <p class="cs-protocard__eyebrow">Prototype · Phase 4</p>
+                <h4 class="cs-protocard__title">Agentic Checkout — Full Flow</h4>
+                <p class="cs-protocard__desc">End-to-end: an agent initiates a payment, the checkout adapts to context, the merchant gets a full audit trail.</p>
+                <a href="#" class="cs-proto__btn">&#9654; View prototype</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ============ KEY DECISIONS ============ -->
+      <section class="cs-section reveal">
+        <p class="cs-eyebrow">Key Decisions</p>
+        <h2 class="cs-h2">Where the hard choices were</h2>
+        <p class="cs-p">Three decisions that defined the design direction — and the reasoning behind each.</p>
+        <div class="cs-decisions">
+          <div class="cs-decision cs-decision--card">
+            <p class="cs-decision__kicker">Decision 01</p>
+            <h3 class="cs-decision__title">Where does checkout configuration live — merchant or agent?</h3>
+            <p class="cs-decision__k">We considered</p>
+            <p class="cs-decision__v">Letting the agent configure checkout parameters at runtime — dynamic, flexible, but unpredictable for merchants.</p>
+            <p class="cs-decision__k">We chose</p>
+            <p class="cs-decision__v cs-decision__v--choice">Merchant-set configuration with an agent-readable contract — merchants define the rules, agents operate within them.</p>
+            <p class="cs-decision__k">Because</p>
+            <p class="cs-decision__v cs-guide">Add your reasoning — what trust model, legal constraint, or merchant feedback drove this boundary.</p>
+          </div>
+          <div class="cs-decision cs-decision--card">
+            <p class="cs-decision__kicker">Decision 02</p>
+            <h3 class="cs-decision__title">How much does the payer see about who initiated the transaction?</h3>
+            <p class="cs-decision__k">We considered</p>
+            <p class="cs-decision__v">Full transparency — surfacing "this checkout was initiated by an AI agent" in the payer UI.</p>
+            <p class="cs-decision__k">We chose</p>
+            <p class="cs-decision__v cs-decision__v--choice">Disclosure without friction — a clear audit trail for merchants, lightweight context for payers where relevant.</p>
+            <p class="cs-decision__k">Because</p>
+            <p class="cs-decision__v cs-guide">Add your reasoning — what payer research, legal guidance, or conversion data informed this balance.</p>
+          </div>
+          <div class="cs-decision cs-decision--card">
+            <p class="cs-decision__kicker">Decision 03</p>
+            <h3 class="cs-decision__title">Synchronous confirmation vs. async receipt in agentic flows?</h3>
+            <p class="cs-decision__k">We considered</p>
+            <p class="cs-decision__v">Requiring synchronous confirmation for every agent-initiated transaction — safe, but blocking for automated flows.</p>
+            <p class="cs-decision__k">We chose</p>
+            <p class="cs-decision__v cs-decision__v--choice">Async by default with merchant-configurable confirmation gates — agents move fast, merchants set the guardrails.</p>
+            <p class="cs-decision__k">Because</p>
+            <p class="cs-decision__v cs-guide">Add your specific reasoning — what engineering constraint or use case evidence made async the right default.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PROTOTYPE GALLERY ============ -->
+      <section class="cs-section reveal">
+        <p class="cs-eyebrow">Prototype Gallery</p>
+        <h2 class="cs-h2">See the work in motion</h2>
+        <p class="cs-p">Four prototypes — from audit to agentic checkout — showing the full arc of this platform evolution.</p>
+        <div class="cs-gallery2">
+          <article class="cs-gallery2__card">
+            <p class="cs-gallery2__eyebrow">Phase 1 · Audit</p>
+            <h3 class="cs-gallery2__title">Constraint &amp; Failure Mode Map</h3>
+            <p class="cs-gallery2__desc">Interactive walkthrough of where the existing payment link UX breaks under non-human initiation.</p>
+            <a href="#" class="cs-proto__btn">&#9654; View in Figma</a>
+          </article>
+          <article class="cs-gallery2__card">
+            <p class="cs-gallery2__eyebrow">Phase 2 · Extensibility</p>
+            <h3 class="cs-gallery2__title">Checkout Configuration UI</h3>
+            <p class="cs-gallery2__desc">The merchant-facing surface for customizing payment link behavior — fields, logic, and developer handoff.</p>
+            <a href="#" class="cs-proto__btn">&#9654; View in Figma</a>
+          </article>
+          <article class="cs-gallery2__card">
+            <p class="cs-gallery2__eyebrow">Phase 3 · Observability</p>
+            <h3 class="cs-gallery2__title">Transaction Audit Dashboard</h3>
+            <p class="cs-gallery2__desc">How ops teams trace, investigate, and resolve agent-initiated payment flows in real time.</p>
+            <a href="#" class="cs-proto__btn">&#9654; View in Figma</a>
+          </article>
+          <article class="cs-gallery2__card">
+            <p class="cs-gallery2__eyebrow">Phase 4 · Agentic</p>
+            <h3 class="cs-gallery2__title">Full Agentic Checkout Flow</h3>
+            <p class="cs-gallery2__desc">End-to-end: agent initiates, checkout adapts, merchant gets a full audit trail. Human-initiated shown for comparison.</p>
+            <a href="#" class="cs-proto__btn">&#9654; View in Figma</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============ WHAT I LEARNED ============ -->
+      <section class="cs-section reveal">
+        <p class="cs-eyebrow">What I Learned</p>
+        <h2 class="cs-h2">What shifted across this project</h2>
+        <p class="cs-p">Not what went well — what changed in how I think about payments, platform, and designing for non-human actors.</p>
+        <div class="cs-lessongrid">
+          <div class="cs-lessoncard">
+            <span class="cs-lessoncard__n">01</span>
+            <p class="cs-lessoncard__t">Designing for non-human initiators requires a different mental model</p>
+            <p class="cs-lessoncard__p cs-guide">What assumption about "the user" did you have to let go of? What new frame — trust, context, or intent — emerged from designing for a system, not a person?</p>
+          </div>
+          <div class="cs-lessoncard">
+            <span class="cs-lessoncard__n">02</span>
+            <p class="cs-lessoncard__t">Platform design is stakeholder design</p>
+            <p class="cs-lessoncard__p cs-guide">What did you learn about the gap between building a great UI and building a great platform — where the real design work happened in API contracts, configuration models, and engineering alignment?</p>
+          </div>
+          <div class="cs-lessoncard">
+            <span class="cs-lessoncard__n">03</span>
+            <p class="cs-lessoncard__t">Observability is a UX problem, not just an engineering one</p>
+            <p class="cs-lessoncard__p cs-guide">What did you learn about what ops teams and engineers actually need to see — and how different that is from what a traditional analytics dashboard provides?</p>
+          </div>
+          <div class="cs-lessoncard">
+            <span class="cs-lessoncard__n">04</span>
+            <p class="cs-lessoncard__t">Add your fourth insight or remove this card</p>
+            <p class="cs-lessoncard__p cs-guide">Optional — what else shifted in how you think about payments UX, B2B commerce, or cross-functional design leadership in a technically constrained domain?</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ OUTCOMES ============ -->
+      <section class="cs-section reveal">
+        <p class="cs-eyebrow cs-eyebrow--plain">Outcomes &amp; Impact</p>
+        <h2 class="cs-h2">What this work moved</h2>
+        <div class="cs-stats">
+          <div class="cs-stat">
+            <span class="cs-stat__num">&#8593; X%</span>
+            <span class="cs-stat__label">Checkout conversion</span>
+          </div>
+          <div class="cs-stat">
+            <span class="cs-stat__num">&#8212;</span>
+            <span class="cs-stat__label">Add your metric</span>
+          </div>
+          <div class="cs-stat">
+            <span class="cs-stat__num">&#8212;</span>
+            <span class="cs-stat__label">Add your metric</span>
+          </div>
+        </div>
+        <p class="cs-p cs-guide">
+          Describe what the extensibility and observability work unlocked — what new
+          use cases became possible, what the payments API could now support, and how
+          this laid the foundation for stored credentials and recurring billing in
+          Revenue Hub.
+        </p>
+
+        <div class="cs-next">
+          <p class="cs-eyebrow">Next Chapter</p>
+          <h2 class="cs-next__title">Where this goes from here</h2>
+          <p class="cs-next__p">
+            Stored payment credentials, recurring billing, and agent-native receipt
+            formats are the natural next layer. What would need to be true — in the
+            infrastructure, the merchant trust model, or the regulatory landscape —
+            before that work could land? What design problems remain unsolved?
+          </p>
+          <p class="cs-next__p">
+            Would you want a hiring manager to know about the unfinished parts — not
+            as a gap, but as evidence that you're thinking about the full arc of where
+            payments UX is going in an agentic world?
+          </p>
+        </div>
+      </section>
+
+      <!-- ============ FOOTER CTA ============ -->
+      <footer class="cs-foot reveal">
+        <p class="cs-foot__p">Want to talk through the thinking behind this work?</p>
+        <div class="hero__actions" style="justify-content:center">
+          <a href="../index.html#work" class="btn btn--ghost"><span class="btn__arrow">&#8592;</span> Back to all work</a>
+          <a href="../index.html#contact" class="btn btn--primary">Get in touch</a>
+        </div>
+      </footer>
+
+    </div>
+  </main>
+
+  <script src="../script.js"></script>
+</body>
+</html>
