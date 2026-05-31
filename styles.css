@@ -18,6 +18,9 @@
   --accent-soft: #bd7b53; /* serif numerals               */
   --green:       #7f8a63; /* status dot                   */
 
+  --cta:         #2C4A3E; /* primary CTA + AS logo (green) */
+  --cta-deep:    #21382e; /* CTA hover                     */
+
   --text:        #2c2722;
   --text-soft:   #4f463d;
   --text-muted:  #8a7d6e;
@@ -86,10 +89,10 @@ ul { list-style: none; }
 }
 .btn--small { --pad-y: 9px; --pad-x: 18px; font-size: 0.85rem; }
 .btn--primary {
-  background: var(--accent); color: #fbf6f0;
-  box-shadow: 0 10px 26px -12px rgba(165,90,52,0.7);
+  background: var(--cta); color: #fbf6f0;
+  box-shadow: 0 10px 26px -12px rgba(44,74,62,0.7);
 }
-.btn--primary:hover { background: var(--accent-deep); transform: translateY(-2px); box-shadow: 0 16px 34px -12px rgba(165,90,52,0.8); }
+.btn--primary:hover { background: var(--cta-deep); transform: translateY(-2px); box-shadow: 0 16px 34px -12px rgba(44,74,62,0.8); }
 .btn--ghost { background: transparent; color: var(--text-soft); border-color: var(--border-hover); }
 .btn--ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
 .btn__arrow { transition: transform .3s var(--ease); }
@@ -114,7 +117,7 @@ ul { list-style: none; }
 .nav__mark {
   width: 36px; height: 36px; border-radius: 10px;
   display: grid; place-items: center; font-family: var(--font-serif); font-size: 0.95rem; font-weight: 600;
-  background: var(--accent); color: #fbf6f0;
+  background: var(--cta); color: #fbf6f0;
 }
 .nav__name { font-size: 1rem; font-weight: 600; letter-spacing: 0.01em; }
 .nav__links { display: flex; gap: 30px; margin-left: auto; }
