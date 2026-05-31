@@ -324,13 +324,17 @@ ul { list-style: none; }
   opacity: 0.45; filter: blur(2.5px) saturate(0.72);
   transform: none !important; box-shadow: none !important; border-color: var(--border) !important;
 }
+.work__head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 40px; margin-bottom: 56px;
+}
+.work__head .section__head { margin-bottom: 0; }
 .lockgate {
-  position: relative; display: grid; place-items: center;
-  margin: 6px 0 52px; min-height: 172px; max-height: 280px; overflow: visible;
-  transition: opacity .5s var(--ease), max-height .6s var(--ease), margin .6s var(--ease);
+  flex: 0 0 auto; display: flex; align-items: center; gap: 4px; overflow: visible;
+  transition: opacity .5s var(--ease), transform .5s var(--ease);
 }
 .lockgate[hidden] { display: none; }
-.lockgate.is-gone { opacity: 0; max-height: 0; margin: 0; overflow: hidden; pointer-events: none; }
+.lockgate.is-gone { opacity: 0; transform: scale(0.9); pointer-events: none; }
 
 .lock {
   position: relative; background: none; border: 0; cursor: pointer;
@@ -357,20 +361,20 @@ ul { list-style: none; }
 .lock.is-open .lock__shackle { transform: rotate(26deg); }
 .lock.is-open .lock__hint { opacity: 0; }
 
-.coachmark {
-  position: absolute; right: calc(50% + 74px); top: 50%; width: 210px;
-  transform: translateY(-60%); text-align: right; pointer-events: none;
-}
-.coachmark__note { font-family: var(--font-hand); font-size: 1.55rem; line-height: 1.05; color: var(--text); }
+.coachmark { flex: 0 0 auto; width: 196px; text-align: right; pointer-events: none; }
+.coachmark__note { font-family: var(--font-hand); font-size: 1.5rem; line-height: 1.06; color: var(--text); }
 .coachmark__note b { color: var(--accent); }
-.coachmark__arrow { display: block; width: 106px; height: auto; margin: 4px 0 0 auto; color: var(--accent); }
+.coachmark__arrow { display: block; width: 100px; height: auto; margin: 4px 0 0 auto; color: var(--accent); }
 
-@media (max-width: 720px) {
-  .coachmark {
-    right: auto; left: 50%; top: auto; bottom: calc(100% - 22px);
-    transform: translateX(-44%); width: 196px; text-align: center;
-  }
-  .coachmark__arrow { width: 80px; margin: 4px auto 0; transform: rotate(74deg); }
+@media (max-width: 860px) {
+  .work__head { flex-direction: column; align-items: flex-start; gap: 30px; margin-bottom: 48px; }
+  .lockgate { align-self: center; }
+}
+@media (max-width: 440px) {
+  .coachmark { width: 148px; }
+  .coachmark__note { font-size: 1.25rem; }
+  .coachmark__arrow { width: 82px; }
+  .lock { width: 100px; }
 }
 
 /* ---------- About ---------- */
