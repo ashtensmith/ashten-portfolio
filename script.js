@@ -153,6 +153,45 @@
     }
   }
 
+  /* ---- "Through the glasses" reveal ---- */
+  const specsToggle = document.getElementById('specsToggle');
+  const specsView = document.getElementById('specsView');
+  const specsClose = document.getElementById('specsClose');
+
+  if (specsToggle && specsView) {
+    let lastFocus = null;
+
+    const onSpecsKey = (e) => { if (e.key === 'Escape') closeSpecs(); };
+
+    const openSpecs = () => {
+      lastFocus = document.activeElement;
+      specsView.hidden = false;
+      // next frame so the opacity transition runs
+      window.requestAnimationFrame(() => specsView.classList.add('is-on'));
+      specsToggle.setAttribute('aria-pressed', 'true');
+      document.body.classList.add('specs-open');
+      document.addEventListener('keydown', onSpecsKey);
+      if (specsClose) specsClose.focus();
+    };
+
+    const closeSpecs = () => {
+      specsView.classList.remove('is-on');
+      specsToggle.setAttribute('aria-pressed', 'false');
+      document.body.classList.remove('specs-open');
+      document.removeEventListener('keydown', onSpecsKey);
+      const finish = () => { specsView.hidden = true; specsView.removeEventListener('transitionend', finish); };
+      if (prefersReduced) { specsView.hidden = true; } else { specsView.addEventListener('transitionend', finish); }
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    };
+
+    specsToggle.addEventListener('click', () => {
+      if (specsView.hidden) openSpecs(); else closeSpecs();
+    });
+    if (specsClose) specsClose.addEventListener('click', closeSpecs);
+    // click on the dimmed backdrop (outside the stage) closes
+    specsView.addEventListener('click', (e) => { if (e.target === specsView) closeSpecs(); });
+  }
+
   /* ---- Year in footer (future-proof) ---- */
   // Static "© 2026" is in the markup; no JS needed.
 })();

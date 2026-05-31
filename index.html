@@ -335,7 +335,27 @@
       <div class="container">
         <header class="section__head reveal">
           <span class="section__tag"><span class="mono">03</span> Process</span>
-          <h2 class="section__title">Every problem leaves clues</h2>
+          <div class="process__titlerow">
+            <h2 class="section__title">Every problem leaves clues</h2>
+            <button class="specs-toggle" id="specsToggle" type="button" aria-pressed="false"
+                    aria-label="Put on the glasses to reveal a note" title="Try them on">
+              <svg viewBox="0 0 132 58" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <filter id="specsToggleRough" x="-12%" y="-12%" width="124%" height="124%">
+                    <feTurbulence type="fractalNoise" baseFrequency="0.025" numOctaves="2" seed="5" result="n" />
+                    <feDisplacementMap in="SourceGraphic" in2="n" scale="2.2" />
+                  </filter>
+                </defs>
+                <g filter="url(#specsToggleRough)" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="9" y="16" width="44" height="32" rx="14" />
+                  <rect x="79" y="16" width="44" height="32" rx="14" />
+                  <path d="M53,24 C60,18 72,18 79,24" />
+                  <path d="M9,23 L2,17" />
+                  <path d="M123,23 L130,17" />
+                </g>
+              </svg>
+            </button>
+          </div>
           <p class="section__desc">
             I approach ambiguous problems like an investigation: follow the evidence,
             distrust the obvious answer, and don't close the case until the solution
@@ -423,6 +443,41 @@
       <a href="#top" class="footer__top">Back to top &#8593;</a>
     </div>
   </footer>
+
+  <!-- ============ "THROUGH THE GLASSES" VIEW ============ -->
+  <div class="specs-view" id="specsView" role="dialog" aria-modal="true" aria-label="A note, seen through the glasses" hidden>
+    <div class="specs-view__stage">
+      <svg class="specs-view__frame" viewBox="0 0 920 340" preserveAspectRatio="xMidYMid meet" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="specsRough" x="-6%" y="-10%" width="112%" height="120%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.012 0.016" numOctaves="2" seed="6" result="n" />
+            <feDisplacementMap in="SourceGraphic" in2="n" scale="3" />
+          </filter>
+          <radialGradient id="specsGlass" cx="34%" cy="28%" r="80%">
+            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.16" />
+            <stop offset="55%" stop-color="#7f8a63" stop-opacity="0.06" />
+            <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+          </radialGradient>
+        </defs>
+        <g filter="url(#specsRough)">
+          <ellipse cx="252" cy="178" rx="188" ry="136" fill="url(#specsGlass)" />
+          <ellipse cx="668" cy="178" rx="188" ry="136" fill="url(#specsGlass)" />
+          <g fill="none" stroke="#f1e7da" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+            <ellipse cx="252" cy="178" rx="188" ry="136" />
+            <ellipse cx="668" cy="178" rx="188" ry="136" />
+            <path d="M438,150 C458,118 462,118 482,150" />
+            <path d="M64,150 C40,138 22,148 8,150" />
+            <path d="M856,150 C880,138 898,148 912,150" />
+          </g>
+        </g>
+      </svg>
+      <div class="specs-view__msg">
+        <span class="specs-view__kicker">Now in focus</span>
+        <p class="specs-view__text"><em>Evidence-based design</em> is essential to my success.</p>
+      </div>
+    </div>
+    <button class="specs-view__close" id="specsClose" type="button">Take the glasses off</button>
+  </div>
 
   <script src="script.js"></script>
 </body>
