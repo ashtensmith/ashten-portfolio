@@ -462,35 +462,33 @@
 
   <!-- ============ "THROUGH THE GLASSES" VIEW ============ -->
   <div class="specs-view" id="specsView" role="dialog" aria-modal="true" aria-label="A note, seen through the glasses" hidden>
-    <div class="specs-view__stage">
-      <svg class="specs-view__frame" viewBox="0 0 920 340" preserveAspectRatio="xMidYMid meet" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <filter id="specsRough" x="-6%" y="-10%" width="112%" height="120%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.012 0.016" numOctaves="2" seed="6" result="n" />
-            <feDisplacementMap in="SourceGraphic" in2="n" scale="3" />
-          </filter>
-          <radialGradient id="specsGlass" cx="34%" cy="28%" r="80%">
-            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.16" />
-            <stop offset="55%" stop-color="#7f8a63" stop-opacity="0.06" />
-            <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
-          </radialGradient>
-        </defs>
-        <g filter="url(#specsRough)">
-          <ellipse cx="252" cy="178" rx="188" ry="136" fill="url(#specsGlass)" />
-          <ellipse cx="668" cy="178" rx="188" ry="136" fill="url(#specsGlass)" />
-          <g fill="none" stroke="#f1e7da" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-            <ellipse cx="252" cy="178" rx="188" ry="136" />
-            <ellipse cx="668" cy="178" rx="188" ry="136" />
-            <path d="M438,150 C458,118 462,118 482,150" />
-            <path d="M64,150 C40,138 22,148 8,150" />
-            <path d="M856,150 C880,138 898,148 912,150" />
-          </g>
+    <svg class="specs-view__frame" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="specsRough" x="-4%" y="-6%" width="108%" height="112%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.004 0.005" numOctaves="2" seed="6" result="n" />
+          <feDisplacementMap in="SourceGraphic" in2="n" scale="8" />
+        </filter>
+        <radialGradient id="specsGlass" cx="38%" cy="30%" r="80%">
+          <stop offset="0%" stop-color="#ffffff" stop-opacity="0.13" />
+          <stop offset="55%" stop-color="#7f8a63" stop-opacity="0.05" />
+          <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+        </radialGradient>
+      </defs>
+      <g filter="url(#specsRough)">
+        <ellipse cx="430" cy="452" rx="356" ry="348" fill="url(#specsGlass)" />
+        <ellipse cx="1170" cy="452" rx="356" ry="348" fill="url(#specsGlass)" />
+        <g fill="none" stroke="#f1e7da" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+          <ellipse cx="430" cy="452" rx="356" ry="348" />
+          <ellipse cx="1170" cy="452" rx="356" ry="348" />
+          <path d="M786,252 C800,206 800,206 814,252" />
+          <path d="M76,332 C46,318 22,328 0,332" />
+          <path d="M1524,332 C1554,318 1578,328 1600,332" />
         </g>
-      </svg>
-      <div class="specs-view__msg">
-        <span class="specs-view__kicker">Now in focus</span>
-        <p class="specs-view__text"><em>Evidence-based design</em> is essential to my success.</p>
-      </div>
+      </g>
+    </svg>
+    <div class="specs-view__msg">
+      <span class="specs-view__kicker">Now in focus</span>
+      <p class="specs-view__text"><em>Evidence-based design</em> is essential to my success.</p>
     </div>
     <button class="specs-view__close" id="specsClose" type="button">Take the glasses off</button>
   </div>
