@@ -359,20 +359,17 @@
           <div class="process__titlerow">
             <h2 class="section__title">Every problem leaves clues</h2>
             <button class="specs-toggle" id="specsToggle" type="button" aria-pressed="false"
-                    aria-label="Put on the glasses to reveal a note" title="Try them on">
-              <svg viewBox="0 0 132 58" xmlns="http://www.w3.org/2000/svg">
+                    aria-label="Take a closer look to reveal a note" title="Take a closer look">
+              <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <filter id="specsToggleRough" x="-12%" y="-12%" width="124%" height="124%">
-                    <feTurbulence type="fractalNoise" baseFrequency="0.025" numOctaves="2" seed="5" result="n" />
-                    <feDisplacementMap in="SourceGraphic" in2="n" scale="2.2" />
+                    <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="5" result="n" />
+                    <feDisplacementMap in="SourceGraphic" in2="n" scale="1.8" />
                   </filter>
                 </defs>
-                <g filter="url(#specsToggleRough)" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="9" y="16" width="44" height="32" rx="14" />
-                  <rect x="79" y="16" width="44" height="32" rx="14" />
-                  <path d="M53,24 C60,18 72,18 79,24" />
-                  <path d="M9,23 L2,17" />
-                  <path d="M123,23 L130,17" />
+                <g filter="url(#specsToggleRough)" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="25" cy="25" r="16" stroke-width="3.4" />
+                  <path d="M36.5,36.5 L52,52" stroke-width="6" />
                 </g>
               </svg>
             </button>
@@ -390,7 +387,7 @@
                   <path d="M12,36 L19,22" />
                 </g>
               </svg>
-              <span class="specs-coach__note">Put <b>these</b> on!</span>
+              <span class="specs-coach__note">Take a <b>closer look</b>!</span>
             </span>
           </div>
           <p class="section__desc">
@@ -482,7 +479,7 @@
   </footer>
 
   <!-- ============ "THROUGH THE GLASSES" VIEW ============ -->
-  <div class="specs-view" id="specsView" role="dialog" aria-modal="true" aria-label="A note, seen through the glasses" hidden>
+  <div class="specs-view" id="specsView" role="dialog" aria-modal="true" aria-label="A note, seen through the magnifying glass" hidden>
     <svg class="specs-view__frame" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <filter id="specsRough" x="-4%" y="-6%" width="108%" height="112%">
@@ -496,14 +493,11 @@
         </radialGradient>
       </defs>
       <g filter="url(#specsRough)">
-        <ellipse cx="662" cy="452" rx="452" ry="432" fill="url(#specsGlass)" />
-        <ellipse cx="938" cy="452" rx="452" ry="432" fill="url(#specsGlass)" />
-        <g fill="none" stroke="#f1e7da" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
-          <ellipse cx="662" cy="452" rx="452" ry="432" />
-          <ellipse cx="938" cy="452" rx="452" ry="432" />
-          <path d="M212,360 C150,344 70,352 0,356" />
-          <path d="M1388,360 C1450,344 1530,352 1600,356" />
-        </g>
+        <!-- the single magnifying-glass lens -->
+        <circle cx="800" cy="446" r="430" fill="url(#specsGlass)" />
+        <!-- handle, drawn first so the rim sits cleanly over its join -->
+        <path d="M1104,750 L1500,1010" stroke="#f1e7da" stroke-width="58" stroke-linecap="round" fill="none" />
+        <circle cx="800" cy="446" r="430" fill="none" stroke="#f1e7da" stroke-width="11" />
       </g>
     </svg>
     <div class="specs-view__reveal">
@@ -511,7 +505,7 @@
         <span class="specs-view__kicker">Now in focus</span>
         <p class="specs-view__text"><em>Evidence-based design</em> is essential to my success.</p>
       </div>
-      <button class="specs-view__close" id="specsClose" type="button">Take the glasses off</button>
+      <button class="specs-view__close" id="specsClose" type="button">Done looking</button>
     </div>
   </div>
 

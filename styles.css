@@ -415,7 +415,7 @@ ul { list-style: none; }
 /* Sketched glasses toggle beside the heading */
 .specs-toggle {
   background: none; border: 0; padding: 4px; line-height: 0; cursor: pointer;
-  width: 60px; color: var(--accent-soft); flex: 0 0 auto;
+  width: 46px; color: var(--accent-soft); flex: 0 0 auto;
   -webkit-tap-highlight-color: transparent;
   animation: specsBob 3.6s ease-in-out infinite;
 }
@@ -475,7 +475,7 @@ ul { list-style: none; }
 body.specs-open { overflow: hidden; }
 
 @media (max-width: 560px) {
-  .specs-toggle { width: 52px; }
+  .specs-toggle { width: 42px; }
   .specs-view__msg { padding: 0 12%; }
 }
 
