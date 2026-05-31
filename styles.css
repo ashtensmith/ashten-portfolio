@@ -140,7 +140,7 @@ ul { list-style: none; }
 /* ---------- Hero ---------- */
 .hero { padding: 168px 0 96px; }
 .hero__grid {
-  display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 56px; align-items: center;
+  display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 56px; align-items: start;
 }
 .hero__eyebrow {
   display: inline-flex; align-items: center; gap: 10px;
@@ -192,7 +192,7 @@ ul { list-style: none; }
 
 /* ---------- Scrapbook: magazine cut-out freesia ---------- */
 .scrapbook {
-  position: absolute; top: -58px; right: -30px; width: 152px;
+  position: relative; width: 150px; margin: 46px 0 0 2px;
   z-index: 6; cursor: help; -webkit-tap-highlight-color: transparent;
 }
 .scrapbook:focus { outline: none; }
@@ -258,12 +258,13 @@ ul { list-style: none; }
 .scrapbook:focus-within .scrapbook__note {
   opacity: 1; transform: translate(-50%, 0) rotate(-2deg);
 }
-@media (max-width: 600px) {
-  .scrapbook { top: -46px; right: -8px; width: 120px; }
-  .scrapbook__note { width: 152px; }
+@media (max-width: 960px) {
+  /* single-column hero: tuck the cut-out beside the buttons */
+  .scrapbook { margin: 40px 0 8px 2px; }
 }
-@media (max-width: 380px) {
-  .scrapbook { display: none; }
+@media (max-width: 600px) {
+  .scrapbook { width: 132px; margin-top: 34px; }
+  .scrapbook__note { width: 156px; }
 }
 
 /* ---------- Section scaffolding ---------- */
