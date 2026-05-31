@@ -113,6 +113,8 @@
   const eggCountEl = document.getElementById('eggCount');
   const prizeModal = document.getElementById('prizeModal');
   const prizeClose = document.getElementById('prizeClose');
+  const eggIntro = document.getElementById('eggIntro');
+  const eggIntroClose = document.getElementById('eggIntroClose');
   let eggsFound;
   try { eggsFound = new Set(JSON.parse(sessionStorage.getItem('eggsFound') || '[]')); }
   catch (e) { eggsFound = new Set(); }
@@ -145,11 +147,41 @@
     else { window.setTimeout(() => { prizeModal.hidden = true; }, 420); }
   };
 
+  const showEggIntro = () => {
+    if (!eggIntro) { showEggToast(1); return; }
+    eggIntro.hidden = false;
+    window.requestAnimationFrame(() => eggIntro.classList.add('is-on'));
+    document.body.classList.add('specs-open');
+    if (eggIntroClose) eggIntroClose.focus();
+  };
+  const hideEggIntro = () => {
+    if (!eggIntro) return;
+    eggIntro.classList.remove('is-on');
+    document.body.classList.remove('specs-open');
+    if (prefersReduced) { eggIntro.hidden = true; }
+    else { window.setTimeout(() => { eggIntro.hidden = true; }, 420); }
+  };
+
   function markEgg(id) {
-    if (!eggToast || eggsFound.has(id)) return;
+    if (eggsFound.has(id)) return;
     eggsFound.add(id);
     try { sessionStorage.setItem('eggsFound', JSON.stringify([...eggsFound])); } catch (e) { /* ignore */ }
     const count = eggsFound.size;
+
+    if (count === 1) {
+      // First find: a short explanatory modal so they understand the hunt.
+      // If the glasses overlay is mid-experience, let it play, then hand off.
+      if (specsView && !specsView.hidden) {
+        window.setTimeout(() => {
+          if (typeof closeSpecsView === 'function') closeSpecsView();
+          window.setTimeout(showEggIntro, 520);
+        }, 950);
+      } else {
+        showEggIntro();
+      }
+      return;
+    }
+
     showEggToast(count);
     if (count >= EGG_TOTAL) {
       // let the "3 of 3" toast land, close any open overlay, then celebrate
@@ -162,7 +194,13 @@
 
   if (prizeClose) prizeClose.addEventListener('click', hidePrize);
   if (prizeModal) prizeModal.addEventListener('click', (e) => { if (e.target === prizeModal) hidePrize(); });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && prizeModal && !prizeModal.hidden) hidePrize(); });
+  if (eggIntroClose) eggIntroClose.addEventListener('click', hideEggIntro);
+  if (eggIntro) eggIntro.addEventListener('click', (e) => { if (e.target === eggIntro) hideEggIntro(); });
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    if (prizeModal && !prizeModal.hidden) hidePrize();
+    if (eggIntro && !eggIntro.hidden) hideEggIntro();
+  });
 
   const flowerEgg = document.querySelector('.scrapbook');
   if (flowerEgg) {

@@ -623,3 +623,8 @@ body.specs-open { overflow: hidden; }
 .confetti:nth-child(8)  { left: 88%; background: #7f8a63; animation-delay: 1.0s; animation-duration: 2.9s; }
 .confetti:nth-child(9)  { left: 14%; background: #bd7b53; animation-delay: 1.7s; animation-duration: 2.6s; }
 .confetti:nth-child(10) { left: 72%; background: #b9683f; animation-delay: .6s;  animation-duration: 3.0s; }
+
+/* Easter-egg intro modal (first find) */
+.prize__egg { font-size: 3rem; line-height: 1; display: block; margin-bottom: 4px; }
+.prize--intro .prize__card { max-width: 440px; }
+.egg-progress { font-family: var(--font-hand); font-size: 1.35rem; color: var(--accent); margin-top: 16px; }

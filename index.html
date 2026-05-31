@@ -524,6 +524,18 @@
     </span>
   </div>
 
+  <!-- ============ EASTER-EGG INTRO (first find) ============ -->
+  <div class="prize prize--intro" id="eggIntro" role="dialog" aria-modal="true" aria-label="You found an easter egg" hidden>
+    <div class="prize__card">
+      <span class="prize__egg" aria-hidden="true">&#129370;</span>
+      <p class="prize__kicker">You found an easter egg!</p>
+      <h3 class="prize__title">There are three hidden here</h3>
+      <p class="prize__sub">Nice eye. Three little easter eggs are tucked around this page — playful things you can click. Find all three and a special prize is yours.</p>
+      <p class="egg-progress">1 of 3 found</p>
+      <button class="btn btn--primary prize__close" id="eggIntroClose" type="button">Keep exploring</button>
+    </div>
+  </div>
+
   <!-- ============ PRIZE: DANCING PLATYPUS ============ -->
   <div class="prize" id="prizeModal" role="dialog" aria-modal="true" aria-label="You found all three easter eggs" hidden>
     <div class="prize__card">
