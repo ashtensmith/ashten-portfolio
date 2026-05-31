@@ -82,6 +82,24 @@
 .cs-figure__sub { font-size: 0.9rem; color: var(--text-muted); opacity: 0.8; }
 .cs-figure--tall { min-height: 420px; }
 
+/* ---------- Real screenshots / mockups ---------- */
+.cs-shot { display: block; width: 100%; height: auto; margin-top: 30px; border-radius: var(--radius-sm); }
+.cs-shot--framed { border: 1px solid var(--border); background: #fff; box-shadow: 0 26px 54px -34px rgba(90,60,35,0.5); }
+.cs-figc { margin-top: 30px; }
+.cs-figc .cs-shot { margin-top: 0; }
+.cs-figc figcaption, .cs-cap { margin-top: 12px; font-size: 0.82rem; color: var(--text-muted); text-align: center; line-height: 1.55; }
+.cs-imgrow { display: grid; gap: 18px; margin-top: 30px; align-items: start; }
+.cs-imgrow--2 { grid-template-columns: 1fr 1fr; }
+.cs-imgrow--3 { grid-template-columns: 1fr 1fr 1fr; }
+.cs-imgrow figure { margin: 0; }
+.cs-imgrow .cs-shot { margin-top: 0; }
+/* break out wider than the reading column for dense screenshots */
+.cs-wide { width: min(1060px, 92vw); margin-left: 50%; transform: translateX(-50%); }
+@media (max-width: 760px) {
+  .cs-imgrow--2, .cs-imgrow--3 { grid-template-columns: 1fr; }
+  .cs-wide { width: 100%; margin-left: 0; transform: none; }
+}
+
 /* ---------- Prototype CTA card (dark) ---------- */
 .cs-proto {
   margin-top: 22px; border-radius: var(--radius); overflow: hidden;

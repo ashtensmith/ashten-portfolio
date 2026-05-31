@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AppFolio Resident Page Redesign — Case Study · Ashten Smith</title>
+  <meta name="description" content="A data-driven redesign of AppFolio's most-visited page — using behavioral data and usability testing to reduce cognitive load, lift task success, and reshape how the org prioritized information architecture." />
+
+  <meta property="og:title" content="AppFolio Resident Page Redesign — Case Study" />
+  <meta property="og:description" content="Reducing cognitive load on AppFolio's most-visited page, backed by data." />
+  <meta property="og:type" content="article" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../case-study.css" />
+</head>
+<body>
+  <a href="#problem" class="skip-link">Skip to content</a>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="../index.html#top" class="nav__brand">
+        <span class="nav__mark">AS</span>
+        <span class="nav__name">Ashten&nbsp;Smith</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#process">Process</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+      <a href="../index.html#contact" class="btn btn--small nav__cta">Get in touch</a>
+      <button class="nav__menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="cs" id="top">
+    <div class="cs__wrap">
+
+      <a href="../index.html#work" class="cs-back">&#8592; All work</a>
+
+      <!-- ============ HERO ============ -->
+      <header class="cs-hero reveal">
+        <p class="cs-hero__eyebrow">Case Study 04</p>
+        <h1 class="cs-hero__title">AppFolio's Resident Page <em>Redesign</em></h1>
+        <p class="cs-hero__lede">
+          A data-driven approach to reducing a user's cognitive load on
+          AppFolio's most-visited page.
+        </p>
+        <div class="cs-meta">
+          <span class="cs-pill"><b>Role</b> Product Designer · Research &amp; Design</span>
+          <span class="cs-pill"><b>Platform</b> AppFolio · Property Management</span>
+          <span class="cs-pill"><b>Status</b> Shipped · Adopted into the design system</span>
+          <span class="cs-pill"><b>Tags</b> Research · Data-Driven Design · IA</span>
+        </div>
+        <img class="cs-shot" src="assets/resident/cover.png"
+             alt="The redesigned AppFolio resident page shown on a desktop monitor." />
+      </header>
+
+      <!-- ============ THE OPPORTUNITY ============ -->
+      <section class="cs-section reveal" id="problem">
+        <p class="cs-eyebrow cs-eyebrow--plain">The Opportunity</p>
+        <h2 class="cs-h2">When growth quietly breaks usability</h2>
+        <figure class="cs-quote">
+          <blockquote>"Your UX focus is on making the product better to generate more sales, but you leave the actual users behind."</blockquote>
+          <figcaption>NPS customer feedback</figcaption>
+        </figure>
+        <p class="cs-p">
+          During high-growth periods, companies struggle to keep a product usable as
+          features pile up. AppFolio was watching its lagging success indicators —
+          NPS and SUS scores — decline, and research surfaced a telling pattern: across
+          the most-visited pages, <strong>80% of the features were used less than 1%
+          of the time</strong>.
+        </p>
+        <p class="cs-p">
+          Leadership's hypothesis was that ease of use could be improved by
+          <strong>decreasing cognitive load</strong> on highly-adopted pages. The
+          resident page — the single most-visited page in the product — was chosen as
+          the place to test it.
+        </p>
+        <figure class="cs-figc cs-wide">
+          <img class="cs-shot cs-shot--framed" src="assets/resident/opportunity.png"
+               alt="The original AppFolio resident page, dense with features." />
+          <figcaption>The most-visited page in the product — and most of it went untouched.</figcaption>
+        </figure>
+      </section>
+
+      <!-- ============ MY ROLE ============ -->
+      <section class="cs-section reveal">
+        <p class="cs-eyebrow">My Role</p>
+        <h2 class="cs-h2">Let the data make the case</h2>
+        <p class="cs-p">
+          I led the research and design for the redesign — designing and running the
+          usability studies, turning behavioral data into design constraints, and
+          facilitating the collaborative design sessions that turned evidence into a
+          tested, defensible direction.
+        </p>
+        <div class="cs-rolecard">
+          <div>
+            <p class="cs-rolecard__k">What I owned</p>
+            <p class="cs-rolecard__v">Baseline usability testing, card sorting, behavioral-data analysis, design facilitation, and the information-architecture recommendations.</p>
+          </div>
+          <div>
+            <p class="cs-rolecard__k">Who I partnered with</p>
+            <p class="cs-rolecard__v">Product management, engineering, subject-matter experts, and the design-system team.</p>
+          </div>
+          <div>
+            <p class="cs-rolecard__k">How decisions were made</p>
+            <p class="cs-rolecard__v">Behavioral usage data set content size and prominence; SMEs and stakeholders chose the direction most likely to raise ease of use.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ APPROACH ============ -->
+      <section class="cs-section reveal">
+        <p class="cs-eyebrow">Approach</p>
+        <h2 class="cs-h2">Four phases, evidence at every step</h2>
+
+        <div class="cs-timeline">
+
+          <!-- Phase 01 -->
+          <div class="cs-phase">
+            <div class="cs-phase__meta">
+              <span class="cs-phase__label">Phase 01</span>
+              <span class="cs-phase__date">Test</span>
+            </div>
+            <div class="cs-phase__body">
+              <h3 class="cs-h3">Baseline Usability Testing</h3>
+              <p class="cs-p">
+                I established a baseline for common tasks on the resident page through
+                formal usability testing with current users — measuring time on task,
+                pass/fail rate, the single ease question (SEQ), scrolling, and how
+                people visually inspected the page.
+              </p>
+              <ul class="cs-p" style="list-style:disc; padding-left:1.2em; margin-top:14px;">
+                <li><strong>42% of users failed</strong> a common task at the top of the page.</li>
+                <li>SEQ stayed high even when users failed — they didn't realize they had.</li>
+                <li>For every task, <strong>~80% of users scrolled</strong> on their first attempt — even for tasks at the top of the page.</li>
+                <li>Failures often came from not knowing the <em>scope</em> of a task — a single resident vs. the entire unit.</li>
+              </ul>
+              <figure class="cs-quote">
+                <blockquote>"As you go down the page, things tend to blur a little bit and you really have to pay attention to reading each header."</blockquote>
+                <figcaption>Usability test participant</figcaption>
+              </figure>
+              <figure class="cs-figc cs-wide">
+                <img class="cs-shot cs-shot--framed" src="assets/resident/current-design.png"
+                     alt="The original resident page used as the baseline-testing reference." />
+                <figcaption>The baseline: the page as it existed before the redesign.</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <!-- Phase 02 -->
+          <div class="cs-phase">
+            <div class="cs-phase__meta">
+              <span class="cs-phase__label">Phase 02</span>
+              <span class="cs-phase__date">Sort</span>
+            </div>
+            <div class="cs-phase__body">
+              <h3 class="cs-h3">Card Sorting</h3>
+              <p class="cs-p">
+                I ran card sorting to inform the information architecture and learn how
+                customers actually think about resident-level versus occupancy-level
+                information — their terminology, and how they'd group the tasks.
+              </p>
+              <figure class="cs-figc cs-wide">
+                <img class="cs-shot cs-shot--framed" src="assets/resident/card-sorting.jpg"
+                     alt="Card-sorting exercise used to inform the information architecture." />
+                <figcaption>Card sorting grounded the IA in customers' own mental models.</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <!-- Phase 03 -->
+          <div class="cs-phase">
+            <div class="cs-phase__meta">
+              <span class="cs-phase__label">Phase 03</span>
+              <span class="cs-phase__date">Data</span>
+            </div>
+            <div class="cs-phase__body">
+              <h3 class="cs-h3">Data-Driven Design Mobbing</h3>
+              <p class="cs-p">
+                I pulled quantitative feature-usage data — everything above the 1%
+                usage line — and facilitated a series of collaborative design sessions
+                in Figma where the <strong>behavioral data dictated content size and
+                feature prominence</strong>, built from design-system components.
+              </p>
+              <figure class="cs-figc cs-wide">
+                <img class="cs-shot cs-shot--framed" src="assets/resident/data-1.png"
+                     alt="Feature-usage data mapped against the page; most features fell below 1% use." />
+                <figcaption>Real usage data decided what earned space — and what didn't.</figcaption>
+              </figure>
+              <div class="cs-imgrow cs-imgrow--2 cs-wide">
+                <figure><img class="cs-shot cs-shot--framed" src="assets/resident/data-2.png" alt="Behavioral usage data, continued." /></figure>
+                <figure><img class="cs-shot cs-shot--framed" src="assets/resident/data-3.png" alt="Behavioral usage data, continued." /></figure>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phase 04 -->
+          <div class="cs-phase">
+            <div class="cs-phase__meta">
+              <span class="cs-phase__label">Phase 04</span>
+              <span class="cs-phase__date">Design</span>
+            </div>
+            <div class="cs-phase__body">
+              <h3 class="cs-h3">Exploring the Constraints</h3>
+              <p class="cs-p">
+                A second round of mobbing pressure-tested the design constraints and
+                alternatives — navigation patterns, the contextual scope of alerts, and
+                how to use the newly available right-side screen space. We explored
+                three directions and, after a stakeholder presentation, selected the
+                middle variant — the one SMEs judged most likely to raise ease of use
+                and customer value.
+              </p>
+              <div class="cs-imgrow cs-imgrow--3 cs-wide">
+                <figure>
+                  <img class="cs-shot cs-shot--framed" src="assets/resident/design-a.png" alt="Preliminary design direction A." />
+                  <figcaption>Direction A</figcaption>
+                </figure>
+                <figure>
+                  <img class="cs-shot cs-shot--framed" src="assets/resident/design-b.png" alt="Preliminary design direction B — the selected middle variant." />
+                  <figcaption>Direction B — selected</figcaption>
+                </figure>
+                <figure>
+                  <img class="cs-shot cs-shot--framed" src="assets/resident/design-c.png" alt="Preliminary design direction C." />
+                  <figcaption>Direction C</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ============ RESULTS ============ -->
+      <section class="cs-section reveal">
+        <p class="cs-eyebrow">Results</p>
+        <h2 class="cs-h2">The redesign, retested</h2>
+        <p class="cs-p">
+          We put the chosen design back through the same usability tests we ran at
+          baseline. The same tasks, measured the same way — now against the redesign.
+        </p>
+        <div class="cs-imgrow cs-imgrow--2 cs-wide">
+          <figure>
+            <img class="cs-shot cs-shot--framed" src="assets/resident/result-notes.jpg" alt="Test results for the add-a-note task." />
+            <figcaption>Adding a note: <strong>+82%</strong> success, <strong>&minus;20%</strong> scrolling.</figcaption>
+          </figure>
+          <figure>
+            <img class="cs-shot cs-shot--framed" src="assets/resident/result-emergency.jpg" alt="Test results for finding an emergency contact." />
+            <figcaption>Emergency contact: <strong>75%</strong> succeeded, vs. <strong>42%</strong> who failed on the original.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- ============ OUTCOMES ============ -->
+      <section class="cs-section reveal">
+        <p class="cs-eyebrow cs-eyebrow--plain">Outcomes &amp; Impact</p>
+        <h2 class="cs-h2">What this work moved</h2>
+        <div class="cs-stats">
+          <div class="cs-stat">
+            <span class="cs-stat__num">+82%</span>
+            <span class="cs-stat__label">Success rate on adding a note</span>
+          </div>
+          <div class="cs-stat">
+            <span class="cs-stat__num">75%</span>
+            <span class="cs-stat__label">Found an emergency contact, vs. 42% who failed before</span>
+          </div>
+          <div class="cs-stat">
+            <span class="cs-stat__num">2 patterns</span>
+            <span class="cs-stat__label">Adopted into the AppFolio design system</span>
+          </div>
+        </div>
+        <p class="cs-p">
+          The impact reached well past the page itself. The findings reshaped how the
+          organization prioritized work for the following year — earning substantial
+          budget toward information architecture, a full reorganization from segment
+          teams into platform teams, and a more holistic approach to problem-solving.
+        </p>
+        <p class="cs-p">
+          Two patterns born from the redesign — a <strong>secondary navigation
+          layer</strong> and a <strong>contextual task dropdown</strong> — were
+          adopted into the AppFolio design system, and are still in active use today.
+        </p>
+
+        <div class="cs-next">
+          <p class="cs-eyebrow">The Takeaway</p>
+          <h2 class="cs-next__title">Cognitive load is a measurable thing</h2>
+          <p class="cs-next__p">
+            The most persuasive artifact wasn't a polished mockup — it was the usage
+            data showing that most of the page went unused. Once "ease of use" had
+            numbers behind it, the conversation changed: from defending pixels to
+            prioritizing the architecture of the whole product.
+          </p>
+          <p class="cs-next__p">
+            That's the thread I've carried forward — design decisions earn trust fastest
+            when they're backed by evidence, and the best research doesn't just improve
+            a page, it changes how the team decides what to build next.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============ FOOTER CTA ============ -->
+      <footer class="cs-foot reveal">
+        <p class="cs-foot__p">Want to talk through the thinking behind this work?</p>
+        <div class="hero__actions" style="justify-content:center">
+          <a href="../index.html#work" class="btn btn--ghost"><span class="btn__arrow">&#8592;</span> Back to all work</a>
+          <a href="../index.html#contact" class="btn btn--primary">Get in touch</a>
+        </div>
+      </footer>
+
+    </div>
+  </main>
+
+  <script src="../script.js"></script>
+</body>
+</html>

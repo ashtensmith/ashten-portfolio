@@ -282,7 +282,7 @@ ul { list-style: none; }
 .section__desc { margin-top: 18px; color: var(--text-soft); font-size: 1.05rem; line-height: 1.65; }
 
 /* ---------- Cases ---------- */
-.cases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.cases { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 .case {
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
   padding: 30px; display: flex; flex-direction: column;
