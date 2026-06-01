@@ -382,9 +382,10 @@ ul { list-style: none; }
 .about__portrait {
   aspect-ratio: 4/5; border-radius: var(--radius); border: 1px solid var(--border);
   background: linear-gradient(160deg, var(--surface-2), var(--surface));
-  display: grid; place-items: center;
+  display: grid; place-items: center; overflow: hidden;
 }
 .about__initials { font-family: var(--font-serif); font-size: 3.4rem; font-weight: 500; color: var(--accent-soft); }
+.about__photo { width: 100%; height: 100%; object-fit: cover; display: block; }
 .about__badge {
   margin-top: 14px; display: inline-block; padding: 9px 16px; border-radius: 999px;
   border: 1px solid var(--border); background: var(--surface-3); color: var(--text-muted);
