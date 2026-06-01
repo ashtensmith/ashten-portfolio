@@ -95,9 +95,17 @@
 .cs-imgrow .cs-shot { margin-top: 0; }
 /* break out wider than the reading column for dense screenshots */
 .cs-wide { width: min(1060px, 92vw); margin-left: 50%; transform: translateX(-50%); }
+/* Hero/figure images that carry .cs-wide directly sit inside .cs-figc, whose
+   `.cs-figc .cs-shot { margin: 0 auto }` out-specifies .cs-wide's margin-left and
+   broke the page-centered bleed (the image drifted off the left edge). Restore it. */
+.cs-figc .cs-shot.cs-wide { margin: 0 0 0 50%; }
+/* Inside the evolution timeline the body column is offset to the right and is not
+   page-centered, so the bleed mis-centers and overflows. Keep wide blocks in-column. */
+.cs-phase__body .cs-wide { width: 100%; margin-left: 0; transform: none; }
 @media (max-width: 760px) {
   .cs-imgrow--2, .cs-imgrow--3 { grid-template-columns: 1fr; }
-  .cs-wide { width: 100%; margin-left: 0; transform: none; }
+  .cs-wide,
+  .cs-figc .cs-shot.cs-wide { width: 100%; margin-left: 0; transform: none; }
 }
 
 /* ---------- Prototype CTA card (dark) ---------- */
