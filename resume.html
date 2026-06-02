@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Résumé · Ashten Smith</title>
-  <meta name="description" content="Résumé of Ashten Smith, Staff Product Designer." />
+  <meta name="description" content="Résumé of Ashten Smith, Staff Product Designer working in AI platform, agentic UX, and design systems." />
 
   <meta property="og:title" content="Résumé · Ashten Smith" />
   <meta property="og:description" content="Résumé of Ashten Smith, Staff Product Designer." />
@@ -16,20 +16,100 @@
   <link rel="stylesheet" href="styles.css" />
 
   <style>
-    .resume-wrap { max-width: 1000px; margin: 0 auto; padding: 110px 24px 64px; }
-    .resume-head {
+    .resume-wrap { max-width: 1040px; margin: 0 auto; padding: 104px 24px 72px; }
+
+    .resume-topbar {
       display: flex; align-items: center; justify-content: space-between;
-      gap: 16px; flex-wrap: wrap; margin-bottom: 24px;
+      gap: 16px; flex-wrap: wrap; margin-bottom: 18px;
     }
-    .resume-head h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 0; }
-    .resume-back { display: inline-block; margin-bottom: 8px; font-size: 0.9rem; }
-    .resume-viewer {
-      width: 100%; height: 80vh; min-height: 520px;
-      border: 1px solid var(--border, #e0e0e0);
-      border-radius: 12px; overflow: hidden; background: #fff;
+    .resume-back { font-size: 0.9rem; }
+
+    .resume-doc {
+      background: var(--surface-3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 26px 54px -38px rgba(90,60,35,0.45);
+      padding: clamp(28px, 4.5vw, 56px);
     }
-    .resume-viewer object, .resume-viewer iframe { width: 100%; height: 100%; border: 0; display: block; }
-    .resume-fallback { padding: 24px; font-size: 0.95rem; line-height: 1.6; }
+
+    /* Header */
+    .resume-hd { border-bottom: 1px solid var(--border); padding-bottom: 20px; }
+    .resume-name {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 5vw, 3rem);
+      line-height: 1.05; letter-spacing: -0.01em;
+      color: var(--accent-deep); margin: 0;
+    }
+    .resume-role {
+      margin: 10px 0 0;
+      font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .resume-contact {
+      margin: 14px 0 0; font-size: 0.85rem; color: var(--text-soft);
+      display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center;
+    }
+    .resume-contact a { color: var(--accent-deep); text-decoration: none; }
+    .resume-contact a:hover { text-decoration: underline; }
+    .resume-contact .sep { color: var(--text-muted); }
+
+    .resume-summary {
+      margin: 22px 0 30px; font-size: 0.98rem; line-height: 1.7; color: var(--text-soft);
+    }
+    .resume-summary strong { color: var(--text); font-weight: 600; }
+
+    /* Two-column body */
+    .resume-grid { display: grid; grid-template-columns: 236px 1fr; gap: clamp(28px, 4.5vw, 56px); }
+
+    .resume-sec { margin-bottom: 24px; }
+    .resume-sec__h {
+      margin: 0 0 10px; padding-bottom: 6px;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--accent-deep); border-bottom: 1px solid var(--border);
+    }
+    .resume-subh {
+      margin: 12px 0 4px; font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted);
+    }
+    .resume-side p { margin: 0; font-size: 0.85rem; line-height: 1.6; color: var(--text-soft); }
+
+    .resume-item { margin-bottom: 12px; }
+    .resume-item__t { margin: 0; font-family: var(--font-serif); font-size: 0.98rem; color: var(--text); }
+    .resume-item__s { margin: 2px 0 0; font-size: 0.82rem; color: var(--text-muted); }
+
+    /* Experience */
+    .resume-job { margin-bottom: 26px; }
+    .resume-job:last-child { margin-bottom: 0; }
+    .rj-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+    .rj-co { margin: 0; font-family: var(--font-serif); font-size: 1.3rem; color: var(--text); }
+    .rj-date {
+      font-family: var(--font-serif); font-style: italic;
+      font-size: 0.85rem; color: var(--accent-soft); white-space: nowrap;
+    }
+    .rj-role { margin: 4px 0 10px; font-size: 0.88rem; font-weight: 600; color: var(--accent-deep); }
+    .rj-role .rj-note { color: var(--text-muted); font-weight: 400; }
+
+    .resume-job ul { list-style: none; margin: 0; padding: 0; }
+    .resume-job li {
+      position: relative; padding-left: 18px; margin-bottom: 9px;
+      font-size: 0.9rem; line-height: 1.6; color: var(--text-soft);
+    }
+    .resume-job li::before { content: "•"; position: absolute; left: 2px; color: var(--accent); }
+    .resume-job li strong { color: var(--text); font-weight: 600; }
+
+    @media (max-width: 760px) {
+      .resume-grid { grid-template-columns: 1fr; gap: 28px; }
+      .resume-wrap { padding-top: 88px; }
+    }
+
+    /* Print: clean page, no chrome */
+    @media print {
+      .nav, .resume-topbar, .footer { display: none !important; }
+      body { background: #fff; }
+      .resume-wrap { padding: 0; max-width: none; }
+      .resume-doc { border: 0; box-shadow: none; border-radius: 0; padding: 0; background: #fff; }
+    }
   </style>
 </head>
 <body>
@@ -56,21 +136,130 @@
   </header>
 
   <main class="resume-wrap" id="resume">
-    <a href="index.html#contact" class="cs-back resume-back">&#8592; Back to portfolio</a>
-    <div class="resume-head">
-      <h1>Résumé</h1>
+    <div class="resume-topbar">
+      <a href="index.html#contact" class="cs-back resume-back">&#8592; Back to portfolio</a>
       <a href="assets/Ashten_Smith_Resume.pdf" class="btn btn--ghost" target="_blank" rel="noopener" download>Download PDF &#8595;</a>
     </div>
 
-    <div class="resume-viewer">
-      <object data="assets/Ashten_Smith_Resume.pdf#view=FitH" type="application/pdf">
-        <iframe src="assets/Ashten_Smith_Resume.pdf#view=FitH" title="Ashten Smith résumé"></iframe>
-        <p class="resume-fallback">
-          Your browser can&rsquo;t display the PDF inline.
-          <a href="assets/Ashten_Smith_Resume.pdf" target="_blank" rel="noopener">Open the résumé (PDF)</a>.
+    <article class="resume-doc">
+      <!-- Header -->
+      <header class="resume-hd">
+        <h1 class="resume-name">Ashten Smith.</h1>
+        <p class="resume-role">Staff Product Designer · AI Platform · Agentic UX · Design Systems</p>
+        <p class="resume-contact">
+          <a href="https://ashtensmith.github.io/ashten-portfolio/">ashtensmith.github.io/ashten-portfolio</a>
+          <span class="sep">·</span>
+          <a href="mailto:ashtensmith472@gmail.com">ashtensmith472@gmail.com</a>
+          <span class="sep">·</span>
+          <a href="https://www.linkedin.com/in/ashten-smith/" target="_blank" rel="noopener">linkedin.com/in/ashten-smith</a>
+          <span class="sep">·</span>
+          <span>Remote (US)</span>
         </p>
-      </object>
-    </div>
+      </header>
+
+      <!-- Summary -->
+      <p class="resume-summary">
+        Product designer with <strong>8+ years</strong> turning complex, high-stakes software into
+        trusted, consumer-grade experiences. I work at the edges of new technology, designing
+        <strong>agentic AI workflows</strong>, payments platforms, and the <strong>design systems</strong>
+        that hold them together, and I craft the vision narratives that align engineering, product, and
+        leadership. Strongest at <strong>0&#8594;1</strong> and in ambiguous, deeply technical problem
+        spaces where software has to explain itself and earn trust.
+      </p>
+
+      <div class="resume-grid">
+        <!-- Sidebar -->
+        <aside class="resume-side">
+          <section class="resume-sec">
+            <h2 class="resume-sec__h">Focus</h2>
+            <p>AI &amp; agentic workflow design · design systems at scale · system thinking · 0&#8594;1 product vision &amp; strategy · complex enterprise UX</p>
+          </section>
+
+          <section class="resume-sec">
+            <h2 class="resume-sec__h">Research &amp; Craft</h2>
+            <p class="resume-subh">Research</p>
+            <p>User &amp; stakeholder interviews, usability &amp; prototype testing, contextual inquiry, survey &amp; script design, research planning</p>
+            <p class="resume-subh">Craft</p>
+            <p>UI &amp; interaction design, visual craft, prototyping, wireframes, heuristic evaluation, journey mapping, ideation facilitation</p>
+          </section>
+
+          <section class="resume-sec">
+            <h2 class="resume-sec__h">Tools</h2>
+            <p>Figma / Claude / Lovable / Replit / Pendo / Amplitude / Qualtrics / Mixmax / Excel / Google Workspace</p>
+          </section>
+
+          <section class="resume-sec">
+            <h2 class="resume-sec__h">Education</h2>
+            <div class="resume-item">
+              <p class="resume-item__t">M.M., Music</p>
+              <p class="resume-item__s">San Francisco Conservatory of Music</p>
+            </div>
+            <div class="resume-item">
+              <p class="resume-item__t">B.A., Music &amp; Psychology</p>
+              <p class="resume-item__s">California State University, Bakersfield</p>
+            </div>
+          </section>
+
+          <section class="resume-sec">
+            <h2 class="resume-sec__h">Certifications</h2>
+            <div class="resume-item">
+              <p class="resume-item__t">UX Design</p>
+              <p class="resume-item__s">CareerFoundry</p>
+            </div>
+            <div class="resume-item">
+              <p class="resume-item__t">Front-End Development</p>
+              <p class="resume-item__s">CareerFoundry</p>
+            </div>
+          </section>
+        </aside>
+
+        <!-- Experience -->
+        <div class="resume-main">
+          <h2 class="resume-sec__h">Experience</h2>
+
+          <section class="resume-job">
+            <div class="rj-head">
+              <h3 class="rj-co">HubSpot</h3>
+              <span class="rj-date">2022 &#8211; Present</span>
+            </div>
+            <p class="rj-role">Senior Product Designer II, Payments &amp; Checkout Experience <span class="rj-note">(promoted from Senior Product Designer I)</span></p>
+            <ul>
+              <li>Set the <strong>0&#8594;1 vision for HubSpot's first agentic customer portal</strong>: a unified, intelligent surface consolidating billing, support, and account management that acts on behalf of users, aligning <strong>4 teams</strong> around a shared agentic-UX foundation.</li>
+              <li>Reframed payment links and checkout as an <strong>extensible, observable platform</strong> built for the agent-driven workflows products will soon depend on, shipping checkout extensibility and agent-ready payment rails.</li>
+              <li>Led, as UX and product DRI, Commerce Hub's most-requested feature (<strong>securely stored payment methods</strong>), research-led from a year of customer feedback through testing and launch to <strong>60% adoption</strong> and <strong>$26M in revenue</strong>.</li>
+              <li>Drove a <strong>47.5% checkout conversion rate</strong> across B2B and B2C through iterative experimentation with engineering, and lifted Gross Payment Volume <strong>~10%</strong> with a digital-wallet integration.</li>
+              <li>Designed for <strong>trust at the point of payment</strong>, partnering with Legal and Content Design to meet FTC compliance requirements without sacrificing usability.</li>
+            </ul>
+          </section>
+
+          <section class="resume-job">
+            <div class="rj-head">
+              <h3 class="rj-co">Jetty</h3>
+              <span class="rj-date">2022</span>
+            </div>
+            <p class="rj-role">Senior Product Designer</p>
+            <ul>
+              <li>Launched Jetty's <strong>first customer research program</strong>, establishing a weekly research cadence for B2B customers.</li>
+              <li>Built and analyzed Jetty's first <strong>product-market-fit survey</strong>, prompting a product-strategy shift that reshaped marketing and sales outreach.</li>
+              <li>Set a 3-month foundational research plan for Jetty Rent and coached executives (CEO, CRO, VP Engineering) and PMs with just-in-time, data-driven recommendations.</li>
+            </ul>
+          </section>
+
+          <section class="resume-job">
+            <div class="rj-head">
+              <h3 class="rj-co">AppFolio</h3>
+              <span class="rj-date">2019 &#8211; 2022</span>
+            </div>
+            <p class="rj-role">Senior UX Designer · UX Designer · Associate UX Designer</p>
+            <ul>
+              <li>Led a <strong>data-driven redesign of AppFolio's most-visited page</strong>, using behavioral data and usability testing to lift task success <strong>+82%</strong> on key flows, with <strong>2 patterns adopted into the design system</strong>.</li>
+              <li>Led design for the <strong>Utility Management</strong> accounting product across two product teams, shaping B2B/B2C strategy with Product, UX, and Engineering leadership.</li>
+              <li>Delivered roadmap-adopted recommendations driving a <strong>20% lift in online leasing adoption</strong> and a <strong>27% margin increase</strong>, clearing the 40% product-market-fit benchmark.</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </article>
   </main>
 
   <footer class="footer">
